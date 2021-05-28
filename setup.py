@@ -26,7 +26,7 @@ setup(
     version=VERSION,
     author='Ligeng Zhu',
     author_email='lykensyu+github@gmail.com',
-    url='https://github.com/Lyken17/pytorch-OpCounter/',
+    url='https://github.com/xxzcc/pytorch-OpCounter/',
     description='A tool to count the FLOPs of PyTorch model.',
     long_description=readme,
     long_description_content_type='text/markdown',

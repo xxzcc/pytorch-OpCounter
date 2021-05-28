@@ -100,11 +100,13 @@ def profile_origin(model, inputs, custom_ops=None, verbose=True):
         if m_type in custom_ops:  # if defined both op maps, use custom_ops to overwrite.
             fn = custom_ops[m_type]
             if m_type not in types_collection and verbose:
-                print("[INFO] Customize rule %s() %s." % (fn.__qualname__, m_type))
+                #print("[INFO] Customize rule %s() %s." % (fn.__qualname__, m_type))
+                pass
         elif m_type in register_hooks:
             fn = register_hooks[m_type]
             if m_type not in types_collection and verbose:
-                print("[INFO] Register %s() for %s." % (fn.__qualname__, m_type))
+                #print("[INFO] Register %s() for %s." % (fn.__qualname__, m_type))
+                pass
         else:
             if m_type not in types_collection and verbose:
                 prRed("[WARN] Cannot find rule for %s. Treat it as zero Macs and zero Params." % m_type)
@@ -169,11 +171,13 @@ def profile(model: nn.Module, inputs, custom_ops=None, verbose=True):
         if m_type in custom_ops:  # if defined both op maps, use custom_ops to overwrite.
             fn = custom_ops[m_type]
             if m_type not in types_collection and verbose:
-                print("[INFO] Customize rule %s() %s." % (fn.__qualname__, m_type))
+                #print("[INFO] Customize rule %s() %s." % (fn.__qualname__, m_type))
+                pass
         elif m_type in register_hooks:
             fn = register_hooks[m_type]
             if m_type not in types_collection and verbose:
-                print("[INFO] Register %s() for %s." % (fn.__qualname__, m_type))
+                #print("[INFO] Register %s() for %s." % (fn.__qualname__, m_type))
+                pass
         else:
             if m_type not in types_collection and verbose:
                 prRed("[WARN] Cannot find rule for %s. Treat it as zero Macs and zero Params." % m_type)

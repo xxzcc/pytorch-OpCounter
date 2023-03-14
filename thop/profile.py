@@ -192,7 +192,10 @@ def profile(model: nn.Module, inputs, custom_ops=None, verbose=True):
     model.apply(add_hooks)
 
     with torch.no_grad():
-        model(*inputs)
+        if isinstance(inputs, tuple):
+            model(*inputs)
+        else:
+            model(**inputs)
 
     def dfs_count(module: nn.Module, prefix="\t") -> (int, int):
         total_ops, total_params = 0, 0
